@@ -49,11 +49,13 @@ export default class CartIcon {
         
         this.elem.style.cssText = "position:fixed;";
 
-        if (document.documentElement.clientWidth - (leftBorder + elemRect.width) > 10 ) {
+        if (document.documentElement.clientWidth - (leftBorder + elemRect.width) >= 10 ) {
 
           this.elem.style.left = leftBorder + "px";
+          this.elem.style.right = '10px'
         } else {
           this.elem.style.right = '10px'
+          this.elem.style.zIndex = 1e3
         }
         this.elem.style.top = "50px";
       } else if (window.pageYOffset < elemRect.top) {
